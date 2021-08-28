@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import com.jfoenix.controls.JFXDialog?>
+<?import com.jfoenix.controls.JFXDialogLayout?>
+<BorderPane fx:id="mainPane" xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="view.adminView.mainView.AdminController"
+            stylesheets="@../../../css/admin.css">
+    <top>
+        <VBox id="welcome-box" alignment="CENTER">
+            <Label id="welcome-label" text="欢迎使用教务管理系统"/>
+            <Label fx:id="clock"/>
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+        </VBox>
+    </top>
+
+    <center>
+        <JFXTabPane fx:id="tabPane" prefWidth="1000" prefHeight="600">
+            <Tab id="student" styleClass="admin-tab" text="学生信息管理">
+                <VBox fx:id="studentInfoBox">
+                    <HBox id="course-title" alignment="CENTER">
+                        <Label styleClass="info-title" text="学生信息"/>
+                    </HBox>
+
+                    <HBox styleClass="query-box">
+                        <JFXTextField fx:id="studentIdNameField" promptText="学号/姓名" styleClass="admin-select"
+                                      labelFloat="true"/>
+                        <JFXComboBox fx:id="studentSexBox" labelFloat="true" styleClass="admin-select"
+                                     promptText="选择性别"/>
+                        <JFXComboBox fx:id="studentCollegeBox" labelFloat="true" styleClass="admin-select"
+                                     promptText="选择学院"/>
+
+                        <JFXComboBox fx:id="studentSdeptBox" labelFloat="true" styleClass="admin-select"
+                                     promptText="选择专业"/>
+                        <JFXComboBox fx:id="studentClassBox" labelFloat="true" styleClass="admin-select"
+                                      promptText="班级"/>
+                        <JFXButton fx:id="studentQueryBtn" styleClass="query-btn" text="查询" buttonType="RAISED"/>
+                    </HBox>
+
+                    <HBox>
+                        <Label text="  学生汇总：当前页面共"/>
+                        <Label fx:id="studentCount" text="0"/>
+                        <Label text="条学生记录"/>
+                    </HBox>
+
+                    <HBox id="student-query-box">
+                        <TableView fx:id="studentQueryTable" prefWidth="1200"
+                                   stylesheets="@../../../css/admin-table-css.css">
+                            <columns>
+                                <TableColumn prefWidth="80" resizable="false" text="学号">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="studentId"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+
+                                <TableColumn prefWidth="80" resizable="false" text="姓名">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="studentName"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+
+                                <TableColumn prefWidth="60" resizable="false" text="性别">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="sex"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+
+                                <TableColumn prefWidth="60" resizable="false" text="年龄">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="age"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+
+                                <TableColumn prefWidth="130" resizable="false" text="所属专业">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="sdeptName"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+
+                                <TableColumn prefWidth="130" resizable="false" text="所属学院">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="collegeName"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+
+                                <TableColumn prefWidth="60" resizable="false" text="班级">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="classNo"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+
+                                <TableColumn prefWidth="120" resizable="false" text="出生年月">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="birth"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+
+                                <TableColumn prefWidth="120" resizable="false" text="入学时间">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="erollDate"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+
+                                <TableColumn prefWidth="110" resizable="false" text="联系方式">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="telephone"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+
+                                <TableColumn fx:id="studentAction" prefWidth="210" resizable="false" text="操作">
+                                    <columns>
+                                        <TableColumn fx:id="studentUpdateAction" resizable="false" prefWidth="70"
+                                                     text="修改"/>
+                                        <TableColumn fx:id="electAction" resizable="false" prefWidth="70"
+                                                     text="选课"/>
+                                        <TableColumn fx:id="studentDeleteAction" resizable="false" prefWidth="70"
+                                                     text="删除"/>
+                                    </columns>
+                                </TableColumn>
+
+
+                            </columns>
+                        </TableView>
+
+                    </HBox>
+
+                    <HBox styleClass="insert-box">
+                        <JFXButton fx:id="studentInsertButton" text="添加学生" styleClass="add-btn"  buttonType="RAISED"/>
+                        <JFXButton fx:id="studentFileChoose" text="批量导入" styleClass="add-btn" buttonType="RAISED"/>
+                    </HBox>
+                </VBox>
+
+            </Tab>
+
+            <Tab id="teacher" styleClass="admin-tab" text="教师信息管理">
+                <VBox fx:id="teacherInfoBox">
+                    <HBox id="course-title" alignment="CENTER">
+                        <Label styleClass="info-title" text="教师信息"/>
+                    </HBox>
+
+                    <HBox id="teacher-query-box">
+                        <JFXTextField fx:id="teacherIdNameField" promptText="教师号/姓名" styleClass="admin-select"
+                                      labelFloat="true"/>
+                        <JFXComboBox fx:id="teacherSexBox" labelFloat="true" styleClass="admin-select"
+                                     promptText="选择性别"/>
+                        <JFXComboBox fx:id="teacherTitleBox" labelFloat="true" styleClass="admin-select"
+                                     promptText="选择职称"/>
+                        <JFXComboBox fx:id="teacherCollegeBox" labelFloat="true" styleClass="admin-select"
+                                     promptText="选择学院"/>
+                        <JFXComboBox fx:id="teacherSdeptBox" labelFloat="true" styleClass="admin-select"
+                                     promptText="选择专业"/>
+                        <JFXComboBox fx:id="teacherOfficeBox" labelFloat="true" styleClass="admin-select"
+                                     promptText="办公室"/>
+                        <JFXButton fx:id="teacherQueryBtn" styleClass="query-btn" text="查询" buttonType="RAISED"/>
+                    </HBox>
+
+                    <HBox>
+                        <Label text="  教师总人数汇总：当前页面共"/>
+                        <Label fx:id="teacherCount" text="0"/>
+                        <Label text="条教师记录   "/>
+                        <Label text="     职称汇总："/>
+                        <Label text="  讲师共"/>
+                        <Label fx:id="normal" text="0人"/>
+                        <Label text=",  副教授共"/>
+                        <Label fx:id="assistantPro" text="0人"/>
+                        <Label text=",  教授共"/>
+                        <Label fx:id="profession" text="0人"/>
+                    </HBox>
+
+                    <HBox id="student-query-box">
+                        <TableView fx:id="teacherQueryTable" prefWidth="1200"
+                                   stylesheets="@../../../css/admin-table-css.css">
+                            <columns>
+                                <TableColumn prefWidth="85" resizable="false" text="教师号">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="teacherId"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+
+                                <TableColumn prefWidth="75" resizable="false" text="姓名">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="teacherName"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+
+                                <TableColumn prefWidth="60" resizable="false" text="性别">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="sex"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn prefWidth="60" resizable="false" text="年龄">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="age"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn prefWidth="60" resizable="false" text="职称">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="title"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+
+                                <TableColumn prefWidth="130" resizable="false" text="所属专业">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="sdeptName"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+
+                                <TableColumn prefWidth="115" resizable="false" text="所属学院">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="collegeName"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+
+                                <TableColumn prefWidth="100" resizable="false" text="办公室">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="office"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+
+                                <TableColumn prefWidth="110" resizable="false" text="出生年月">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="birth"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+
+                                <TableColumn prefWidth="110" resizable="false" text="入职时间">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="entryDate"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+
+                                <TableColumn prefWidth="120" resizable="false" text="联系方式">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="telephone"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+
+                                <TableColumn fx:id="teacherAction" prefWidth="140" resizable="false" text="操作">
+                                    <columns>
+                                        <TableColumn fx:id="teacherUpdateAction" resizable="false" prefWidth="70"
+                                                     text="修改"/>
+                                        <TableColumn fx:id="teacherDeleteAction" resizable="false" prefWidth="70"
+                                                     text="删除"/>
+                                    </columns>
+                                </TableColumn>
+
+
+                            </columns>
+                        </TableView>
+
+                    </HBox>
+
+                    <HBox styleClass="insert-box">
+                        <JFXButton fx:id="teacherInsertButton" text="添加老师" styleClass="add-btn"  buttonType="RAISED"/>
+                    </HBox>
+                </VBox>
+            </Tab>
+
+            <Tab id="course" styleClass="admin-tab" text="课程信息管理">
+                <VBox fx:id="courseQueryBox" styleClass="main-vbox">
+                    <HBox id="course-title" alignment="CENTER">
+                        <Label styleClass="info-title" text="课程信息"/>
+                    </HBox>
+
+                    <HBox styleClass="query-box">
+                        <JFXTextField fx:id="courseQueryField" promptText="课程号/课程名" styleClass="admin-select"
+                                      labelFloat="true"/>
+                        <JFXComboBox fx:id="courseCollegeBox" labelFloat="true" styleClass="admin-select"
+                                     promptText="选择学院"/>
+                        <JFXComboBox fx:id="courseTeacherBox" labelFloat="true" styleClass="admin-select"
+                                     promptText="选择授课教师"/>
+                        <JFXComboBox fx:id="courseSemesterBox" labelFloat="true" styleClass="admin-select"
+                                     promptText="选择学期"/>
+
+                        <JFXButton fx:id="courseQueryBtn" styleClass="query-btn" text="查询" buttonType="RAISED"/>
+                    </HBox>
+
+                    <HBox>
+                        <Label text="课程汇总："/>
+                        <Label fx:id="courseCountLabel"/>
+                    </HBox>
+
+                    <HBox id="course-select-box">
+                        <TableView fx:id="courseQueryTable" stylesheets="@../../../css/admin-table-css.css">
+                            <columns>
+                                <TableColumn prefWidth="90" resizable="false" text="课程号">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="courseId"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn prefWidth="120" resizable="false" text="课程名">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="courseName"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn prefWidth="60" resizable="false" text="学时">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="period"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn prefWidth="60" resizable="false" text="学分">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="credit"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn prefWidth="180" resizable="false" text="开课学期">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="semester"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn prefWidth="130" resizable="false" text="开课学院">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="courseCollege"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn prefWidth="110" resizable="false" text="授课老师">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="courseTeacher"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+
+                                <TableColumn prefWidth="75" resizable="false" text="可选课人数">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="amount"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+
+                                <TableColumn prefWidth="75" resizable="false" text="已选课人数">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="electedAmount"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+
+                                <TableColumn fx:id="courseAction" prefWidth="270" resizable="false" text="操作">
+                                    <columns>
+                                        <TableColumn fx:id="courseUpdateAction" resizable="false" prefWidth="90"
+                                                     text="修改"/>
+                                        <TableColumn fx:id="chooseTeacherAction" resizable="false" prefWidth="90"
+                                                     text="授课"/>
+                                        <TableColumn fx:id="courseDeleteAction" resizable="false" prefWidth="90"
+                                                     text="删除"/>
+                                    </columns>
+                                </TableColumn>
+                            </columns>
+
+
+                            <columnResizePolicy>
+                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                            </columnResizePolicy>
+
+
+                        </TableView>
+                        <padding>
+                            <Insets top="15"/>
+                        </padding>
+                    </HBox>
+                    <HBox styleClass="insert-box">
+                        <JFXButton fx:id="courseInsertButton" text="添加课程" styleClass="add-btn"  buttonType="RAISED"/>
+                    </HBox>
+
+                </VBox>
+            </Tab>
+
+            <Tab id="electCourse" styleClass="admin-tab" text="选课信息查看">
+                <VBox fx:id="electCourseBox" styleClass="main-vbox">
+                    <HBox id="course-title" alignment="CENTER">
+                        <Label styleClass="info-title" text="选课信息"/>
+                    </HBox>
+
+                    <HBox styleClass="query-box">
+                        <JFXTextField fx:id="studentField" promptText="学号/姓名" styleClass="admin-select"
+                                      labelFloat="true"/>
+                        <JFXTextField fx:id="courseField" promptText="课程号/课程名" styleClass="admin-select"
+                                      labelFloat="true"/>
+                        <JFXComboBox fx:id="collegeBox" labelFloat="true" styleClass="admin-select"
+                                     promptText="选择学生学院"/>
+                        <JFXComboBox fx:id="sdeptBox" labelFloat="true" styleClass="admin-select"
+                                     promptText="选择学生专业"/>
+                        <JFXComboBox fx:id="classBox" labelFloat="true" styleClass="admin-select"
+                                     promptText="选择学生班级"/>
+                        <JFXComboBox fx:id="semesterBox" labelFloat="true" styleClass="admin-select"
+                                     promptText="选择学期"/>
+                        <JFXButton fx:id="electCourseQueryBtn" styleClass="query-btn" text="查询" buttonType="RAISED"/>
+                    </HBox>
+                    <HBox>
+                        <Label text="成绩汇总："/>
+                        <Label fx:id="electCountLabel"/>
+                    </HBox>
+                    <HBox id="elect-box">
+                        <TableView fx:id="electCourseTable" stylesheets="@../../../css/admin-table-css.css">
+                            <columns>
+                                <TableColumn prefWidth="90" resizable="false" text="学号">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="studentId"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+
+                                <TableColumn prefWidth="110" resizable="false" text="姓名">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="studentName"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn prefWidth="90" resizable="false" text="课程号">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="courseId"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn prefWidth="110" resizable="false" text="课程名">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="courseName"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn prefWidth="90" resizable="false" text="学时">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="period"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn prefWidth="90" resizable="false" text="学分">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="credit"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+
+                                <TableColumn prefWidth="180" resizable="false" text="开课学期">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="semester"/>
+                                </cellValueFactory>
+                            </TableColumn>
+                                <TableColumn prefWidth="60" resizable="false" text="班级">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="classNo"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn prefWidth="70" resizable="false" text="成绩">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="grade"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn fx:id="electCourseAction" prefWidth="280" resizable="false" text="操作">
+                                    <columns>
+                                        <TableColumn fx:id="gradeAction" resizable="false" prefWidth="140"
+                                                     text="成绩录入"/>
+
+                                        <TableColumn fx:id="cancelAction" resizable="false" prefWidth="140"
+                                                     text="取消选课"/>
+                                    </columns>
+                                </TableColumn>
+                            </columns>
+
+
+
+                            <columnResizePolicy>
+                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                            </columnResizePolicy>
+                        </TableView>
+                    </HBox>
+                    <HBox styleClass="insert-box">
+                        <JFXButton fx:id="electCourseInsertButton" text="学生选课" styleClass="add-btn"  buttonType="RAISED"/>
+                    </HBox>
+
+                </VBox>
+            </Tab>
+
+
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+        </JFXTabPane>
+
+    </center>
+
+
+
+
+    <JFXDialog fx:id="idFieldDialog">
+        <JFXDialogLayout fx:id="idFieldDialogLayout">
+            <heading>
+                <Label style="-fx-font-size: 15">错 误</Label>
+            </heading>
+            <body>
+                <Label fx:id="alertLabel">请输入正确的学号或姓名！</Label>
+            </body>
+            <actions>
+                <JFXButton fx:id="idFieldButton" prefWidth="100" prefHeight="20"
+                           style="-fx-background-color: #DDA0DD;-fx-font-size: 15" text="确 定"/>
+            </actions>
+        </JFXDialogLayout>
+    </JFXDialog>
+
+    <JFXDialog fx:id="classNoFieldDialog">
+        <JFXDialogLayout fx:id="classNoFieldDialogLayout">
+            <heading>
+                <Label style="-fx-font-size: 15">错 误</Label>
+            </heading>
+            <body>
+                <Label>请输入正确的班级号！</Label>
+            </body>
+            <actions>
+                <JFXButton fx:id="classNoFieldFieldButton" prefWidth="100" prefHeight="20"
+                           style="-fx-background-color: #DDA0DD;-fx-font-size: 15" text="确 定"/>
+            </actions>
+        </JFXDialogLayout>
+    </JFXDialog>
+
+    <JFXDialog fx:id="deleteStudentDialog">
+        <JFXDialogLayout fx:id="deleteDialogLayout">
+            <heading>
+                <Label style="-fx-font-size: 15">提 示</Label>
+            </heading>
+            <body>
+                <Label fx:id="deleteLabel">是否确认删除？</Label>
+            </body>
+            <actions>
+                <JFXButton fx:id="confirmDeleteButton" prefWidth="100" prefHeight="20"
+                           style="-fx-background-color: #DDA0DD;-fx-font-size: 15" text="确 定"/>
+                <JFXButton fx:id="cancelDeleteButton" prefWidth="100" prefHeight="20"
+                           style="-fx-background-color: #DDA0DD;-fx-font-size: 15" text="取 消"/>
+
+            </actions>
+        </JFXDialogLayout>
+    </JFXDialog>
+</BorderPane>

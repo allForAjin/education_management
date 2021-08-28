@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane fx:id="mainPane" xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="view.LoginController" stylesheets="@../css/login.css">
+
+    <top>
+        <HBox id="welcomeBox">
+            <Label fx:id="title" id="welcomeLabel" text="教学管理系统"/>
+        </HBox>
+    </top>
+    <center>
+        <VBox id="mainBox">
+            <HBox styleClass="input-box">
+                <Label fx:id="nameLabel" text="用户名：" styleClass="input-label"/>
+                <JFXTextField fx:id="userName" promptText="请输入用户名"/>
+            </HBox>
+
+            <HBox styleClass="input-box">
+                <Label fx:id="passwordLabel" text="密  码：" styleClass="input-label"/>
+                <JFXPasswordField fx:id="password" promptText="请输入密码"/>
+            </HBox>
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox id="btn-box">
+            <JFXButton fx:id="loginBtn" text="登录" buttonType="RAISED"/>
+        </HBox>
+    </bottom>
+
+
+    <JFXDialog fx:id="errorDialog">
+        <JFXDialogLayout fx:id="errorDialogLayout">
+            <heading>
+                <Label style="-fx-font-size: 15">错 误</Label>
+            </heading>
+            <body>
+                <Label fx:id="errorLabel">用户不存在！</Label>
+            </body>
+            <actions>
+                <JFXButton fx:id="errorButton" prefWidth="100" prefHeight="20"
+                           style="-fx-background-color: #DDA0DD;-fx-font-size: 15" text="确 定"/>
+            </actions>
+        </JFXDialogLayout>
+    </JFXDialog>
+
+</BorderPane>

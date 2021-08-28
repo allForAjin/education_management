@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane fx:id="mainPane" xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="view.adminView.file.FileController" stylesheets="@../../../css/file.css">
+    <center>
+        <VBox id="vbox">
+            <HBox styleClass="hbox">
+                <Label text="文件路径："/>
+                <JFXTextField fx:id="filePath" editable="false" promptText="请选择文件路径"/>
+
+            </HBox>
+
+            <HBox styleClass="hbox">
+                <Label text="信息统计："/>
+                <JFXTextField fx:id="infoCount" editable="false"/>
+
+            </HBox>
+
+            <HBox styleClass="hbox">
+                <JFXButton fx:id="chooseButton" text="选择文件" buttonType="RAISED"/>
+                <JFXButton fx:id="confirmButton" text="确认插入" buttonType="RAISED"/>
+            </HBox>
+        </VBox>
+
+
+    </center>
+    <JFXDialog>
+        <JFXDialogLayout fx:id="confirmUpdateDialogLayout">
+            <heading>
+                <Label style="-fx-font-size: 15">确 认</Label>
+            </heading>
+            <body>
+                <Label>是否确定继续？</Label>
+            </body>
+            <actions>
+                <JFXButton fx:id="confirmUpdateButton" prefWidth="100" prefHeight="20"
+                           style="-fx-background-color: #DDA0DD;-fx-font-size: 15" text="确 定"/>
+                <JFXButton fx:id="concelUpdateButton" prefWidth="100" prefHeight="20"
+                           style="-fx-background-color: #DDA0DD;-fx-font-size: 15" text="取 消"/>
+
+            </actions>
+        </JFXDialogLayout>
+    </JFXDialog>
+
+    <JFXDialog>
+        <JFXDialogLayout fx:id="successDialogLayout">
+            <heading>
+                <Label style="-fx-font-size: 15">提 示</Label>
+            </heading>
+            <body>
+                <Label>操作成功！</Label>
+            </body>
+            <actions>
+                <JFXButton fx:id="successButton" prefWidth="100" prefHeight="20"
+                           style="-fx-background-color: #DDA0DD;-fx-font-size: 15" text="确 定"/>
+            </actions>
+        </JFXDialogLayout>
+    </JFXDialog>
+
+    <JFXDialog>
+        <JFXDialogLayout fx:id="failDialogLayout">
+            <heading>
+                <Label style="-fx-font-size: 15">提 示</Label>
+            </heading>
+            <body>
+                <Label>操作失败！</Label>
+            </body>
+            <actions>
+                <JFXButton fx:id="failButton" prefWidth="100" prefHeight="20"
+                           style="-fx-background-color: #DDA0DD;-fx-font-size: 15" text="确 定"/>
+            </actions>
+        </JFXDialogLayout>
+    </JFXDialog>
+
+    <JFXDialog>
+        <JFXDialogLayout fx:id="infoEmptyDialogLayout">
+            <heading>
+                <Label style="-fx-font-size: 15">提 示</Label>
+            </heading>
+            <body>
+                <Label fx:id="infoEmptyLabel">请选择文件！</Label>
+            </body>
+            <actions>
+                <JFXButton fx:id="infoEmptyButton" prefWidth="100" prefHeight="20"
+                           style="-fx-background-color: #DDA0DD;-fx-font-size: 15" text="确 定"/>
+            </actions>
+        </JFXDialogLayout>
+    </JFXDialog>
+
+</BorderPane>

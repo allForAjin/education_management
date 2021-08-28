@@ -1,0 +1,43 @@
+.table-view {
+    -fx-background-insets: 0;
+    -fx-background-color: transparent, white, transparent, white;
+    -fx-pref-width: 1200;
+}
+
+.table-view .content {
+    -fx-background-color: transparent, white, transparent, white;
+}
+
+.table-view:focused {
+    -fx-background-color: transparent, white, transparent, white;
+}
+
+
+.table-row-cell {
+    /*-fx-cell-size: 40px;*/
+    -fx-alignment: center;
+}
+
+.table-column {
+    -fx-alignment: center;
+    -fx-pref-height: 18;
+    -fx-font-size: 13;
+}
+
+
+.table-view > .virtual-flow > .scroll-bar:vertical {
+    /*-fx-pref-width: 5;*/
+    -fx-background-insets: 0, 0 0 0 0;
+    -fx-padding: -1 -1 -1 -1;
+}
+
+
+.table-row-cell #scoreCountTable {
+    -fx-cell-size: 60px;
+}
+
+#electCourseTable .table-row-cell  {
+    -fx-cell-size: 50px;
+}
+
+

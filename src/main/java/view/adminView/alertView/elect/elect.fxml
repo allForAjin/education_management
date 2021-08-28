@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="view.adminView.alertView.elect.ElcetCourseController" stylesheets="@../../../../css/course-info-alert.css">
+
+    <top>
+        <HBox id="title-box" alignment="CENTER" prefHeight="30">
+            <Label id="title-label" text="选课"/>
+            <padding>
+                <Insets top="20"/>
+            </padding>
+        </HBox>
+
+    </top>
+
+
+    <center>
+        <VBox>
+            <HBox id="main-update-box">
+                <VBox styleClass="info-vbox">
+                    <Label text="学号:" styleClass="info-label"/>
+                    <Label text="姓名:" styleClass="info-label"/>
+                    <Label text="开课学院:" styleClass="info-label"/>
+                    <Label text="开课学期:" styleClass="info-label"/>
+                    <Label text="姓名:" styleClass="info-label"/>
+                    <Label text="课程号:" styleClass="info-label"/>
+                    <Label text="课程名:" styleClass="info-label"/>
+
+                </VBox>
+
+                <VBox styleClass="info-vbox">
+                    <JFXTextField fx:id="studentIdField" editable="false"/>
+                    <JFXTextField fx:id="studentNameField" editable="false"/>
+                    <JFXComboBox fx:id="semesterBox" promptText="请选择开课学期"/>
+                    <JFXComboBox fx:id="collegeBox" promptText="请选择开课学院"/>
+                    <JFXTextField fx:id="courseIdField" editable="false"/>
+                    <JFXTextField fx:id="courseNameField" editable="false"/>
+
+                </VBox>
+
+            </HBox>
+
+            <HBox alignment="CENTER" spacing="80">
+                <JFXButton fx:id="infoUpdateButton" buttonType="RAISED" text="确 认"/>
+                <JFXButton fx:id="clearButton" buttonType="RAISED" text="清 空"/>
+                <padding>
+                    <Insets bottom="50"/>
+                </padding>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

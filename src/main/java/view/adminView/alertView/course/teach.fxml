@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDialogLayout?>
+<?import com.jfoenix.controls.JFXDialog?>
+<BorderPane fx:id="mainPane" xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="view.adminView.alertView.course.CourseAlterController"
+            stylesheets="@../../../../css/course-info-alert.css">
+
+    <top>
+        <HBox id="title-box" alignment="CENTER" prefHeight="30">
+            <Label id="title-label" text="授课教师选择"/>
+            <padding>
+                <Insets top="20"/>
+            </padding>
+        </HBox>
+
+    </top>
+
+
+    <center>
+        <VBox id="main-vbox">
+            <HBox id="main-update-box">
+                <VBox styleClass="info-vbox">
+                    <Label text="课程号:" styleClass="info-label"/>
+                    <Label text="课程名:" styleClass="info-label"/>
+                    <Label text="开课学期:" styleClass="info-label"/>
+                    <Label text="开课学院:" styleClass="info-label"/>
+                    <Label text="教师专业:" styleClass="info-label"/>
+                    <Label text="授课教师:" styleClass="info-label"/>
+                </VBox>
+
+                <VBox styleClass="info-vbox">
+                    <JFXTextField fx:id="courseIdField" editable="false"/>
+                    <JFXTextField fx:id="nameField" editable="false"/>
+                    <JFXTextField fx:id="semesterField" editable="false"/>
+                    <JFXTextField fx:id="collegeField" editable="false"/>
+                    <JFXComboBox fx:id="sdeptBox" promptText="选择专业"/>
+                    <JFXComboBox fx:id="teacherBox" promptText="请选择教师"/>
+                </VBox>
+
+            </HBox>
+
+            <HBox alignment="CENTER" spacing="80">
+                <JFXButton fx:id="infoUpdateButton" buttonType="RAISED" text="确认修改"/>
+                <JFXButton fx:id="clearButton" buttonType="RAISED" text="重新选择"/>
+                <padding>
+                    <Insets bottom="50"/>
+                </padding>
+            </HBox>
+        </VBox>
+    </center>
+
+    <JFXDialog>
+        <JFXDialogLayout fx:id="confirmUpdateDialogLayout">
+            <heading>
+                <Label style="-fx-font-size: 15">确 认</Label>
+            </heading>
+            <body>
+                <Label fx:id="confirmLabel">是否确定修改？</Label>
+            </body>
+            <actions>
+                <JFXButton fx:id="confirmUpdateButton" prefWidth="100" prefHeight="20"
+                           style="-fx-background-color: #DDA0DD;-fx-font-size: 15" text="确 定"/>
+                <JFXButton fx:id="concelUpdateButton" prefWidth="100" prefHeight="20"
+                           style="-fx-background-color: #DDA0DD;-fx-font-size: 15" text="取 消"/>
+
+            </actions>
+        </JFXDialogLayout>
+    </JFXDialog>
+
+    <JFXDialog>
+        <JFXDialogLayout fx:id="successDialogLayout">
+            <heading>
+                <Label style="-fx-font-size: 15">提 示</Label>
+            </heading>
+            <body>
+                <Label>修改成功！</Label>
+            </body>
+            <actions>
+                <JFXButton fx:id="successButton" prefWidth="100" prefHeight="20"
+                           style="-fx-background-color: #DDA0DD;-fx-font-size: 15" text="确 定"/>
+            </actions>
+        </JFXDialogLayout>
+    </JFXDialog>
+
+    <JFXDialog>
+        <JFXDialogLayout fx:id="failDialogLayout">
+            <heading>
+                <Label style="-fx-font-size: 15">提 示</Label>
+            </heading>
+            <body>
+                <Label>修改失败！</Label>
+            </body>
+            <actions>
+                <JFXButton fx:id="failButton" prefWidth="100" prefHeight="20"
+                           style="-fx-background-color: #DDA0DD;-fx-font-size: 15" text="确 定"/>
+            </actions>
+        </JFXDialogLayout>
+    </JFXDialog>
+
+    <JFXDialog>
+        <JFXDialogLayout fx:id="infoEmptyDialogLayout">
+            <heading>
+                <Label style="-fx-font-size: 15">提 示</Label>
+            </heading>
+            <body>
+                <Label fx:id="infoEmptyLabel">信息不能为空！</Label>
+            </body>
+            <actions>
+                <JFXButton fx:id="infoEmptyButton" prefWidth="100" prefHeight="20"
+                           style="-fx-background-color: #DDA0DD;-fx-font-size: 15" text="确 定"/>
+            </actions>
+        </JFXDialogLayout>
+    </JFXDialog>
+
+    <JFXDialog>
+        <JFXDialogLayout fx:id="setEmptyDialogLayout">
+            <heading>
+                <Label style="-fx-font-size: 15">提 示</Label>
+            </heading>
+            <body>
+                <Label fx:id="setEmptyEmptyLabel">是否确认清空？</Label>
+            </body>
+            <actions>
+                <JFXButton fx:id="confirmSetEmptyButton" prefWidth="100" prefHeight="20"
+                           style="-fx-background-color: #DDA0DD;-fx-font-size: 15" text="确 定"/>
+                <JFXButton fx:id="cancelSetEmptyButton" prefWidth="100" prefHeight="20"
+                           style="-fx-background-color: #DDA0DD;-fx-font-size: 15" text="取 消"/>
+
+            </actions>
+        </JFXDialogLayout>
+    </JFXDialog>
+
+</BorderPane>

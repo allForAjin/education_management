@@ -1,0 +1,30 @@
+
+
+.label{
+    -fx-font-weight: bolder;
+    -fx-font-size: 18px;
+}
+#vbox{
+    -fx-alignment: center;
+    -fx-spacing: 30px;
+}
+
+.hbox{
+    -fx-alignment: center;
+    -fx-spacing: 20px;
+}
+
+.jfx-text-field{
+    -fx-background-color: #ffffff;
+    -fx-pref-width: 500px;
+    -fx-pref-height: 30px;
+    -fx-font-size: 16px;
+}
+
+
+.jfx-button {
+    -fx-background-color: #00bcff;
+    -fx-text-fill: #ffffff;
+    -fx-pref-width: 80px;
+    -fx-pref-height: 30px;
+}

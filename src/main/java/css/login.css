@@ -1,0 +1,75 @@
+
+.root {
+    -fx-background-image: url("");
+    -fx-outer-border: #cecece;
+}
+
+#welcomeBox {
+    -fx-alignment: center;
+    -fx-padding: 20;
+}
+
+#welcomeLabel {
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+    -fx-font-weight: bolder;
+    -fx-font-family: "宋体";
+    -fx-font-size: 30px;
+}
+
+#mainBox {
+    -fx-padding: 50px;
+    -fx-spacing: 80px;
+}
+
+.input-box {
+    -fx-alignment: center;
+    -fx-spacing: 20px;
+}
+
+.jfx-text-field {
+    -fx-background-color: #ffffff;
+    -fx-pref-width: 200px;
+    -fx-pref-height: 50px;
+    -fx-font-size: 16px;
+}
+
+.jfx-password-field {
+    -fx-background-color: #ffffff;
+    -fx-pref-width: 200px;
+    -fx-pref-height: 50px;
+    -fx-font-size: 16px;
+}
+
+#btn-box {
+    -fx-alignment: center;
+    -fx-padding: 0 0 50 0;
+}
+
+.jfx-button {
+    -fx-background-color: #00bcff;
+    -fx-text-fill: #ffffff;
+    -fx-pref-width: 150;
+    -fx-pref-height: 30;
+}
+
+.input-label {
+    -fx-font-weight: bolder;
+    -fx-font-size: 20px;
+}
+
+.jfx-text-field:error, .jfx-password-field:error, .jfx-text-area:error {
+    -jfx-focus-color: #D34336;
+    -jfx-unfocus-color: #D34336;
+}
+
+.jfx-text-field .error-label, .jfx-password-field .error-label, .jfx-text-area .error-label {
+    -fx-text-fill: #D34336;
+    -fx-font-size: 0.75em;
+}
+
+.jfx-text-field .error-icon, .jfx-password-field .error-icon, .jfx-text-area .error-icon {
+    -fx-text-fill: #D34336;
+    -fx-font-size: 1em;
+}
+

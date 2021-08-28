@@ -1,0 +1,110 @@
+#mainBox {
+    /*-fx-background-color: #fffff0;*/
+    -fx-background-color: rgba(255, 255, 255, 0.5);
+
+}
+
+#welcome-box .label {
+    -fx-font-family: "宋体";
+
+}
+
+#welcome-box #welcome-label {
+    -fx-font-weight: bolder;
+    -fx-font-size: 25px;
+}
+
+#welcome-box #clock {
+    -fx-font-size: 15px;
+}
+
+.main-vbox {
+    /*-fx-background-color: #AAAAAA ;*/
+}
+
+
+.admin-tab {
+    -fx-pref-height: 35px;
+    -fx-pref-width: 24.25em;
+}
+
+.info-title {
+    -fx-font-family: "";
+    -fx-font-weight: bolder;
+    -fx-font-size: 25px;
+    -fx-padding: 15;
+}
+
+
+.tab-label {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 15px;
+}
+
+.tab:selected .tab-label {
+    -fx-text-fill: #000000;
+}
+
+.jfx-tab-pane .tab-selected-line {
+    -fx-border-color: black;
+    -fx-stroke-width: 3px;
+}
+
+.course-label {
+    -fx-font-family: "黑体";
+    -fx-font-size: 16px;
+}
+
+/*学生查询box*/
+.query-box {
+    -fx-spacing: 50;
+    -fx-pref-height: 80px;
+    -fx-alignment: center;
+    -fx-padding: 15;
+}
+
+#teacher-query-box {
+    -fx-spacing: 30;
+    -fx-pref-height: 70px;
+    -fx-alignment: center;
+    -fx-padding: 15;
+}
+
+
+.admin-select {
+    -fx-prompt-text-fill: green;
+    -fx-background-color: #FFFFFF;
+    -fx-pref-height: 30px;
+    -fx-pref-width: 150px;
+    -jfx-focus-color: red;
+}
+
+.select .input-line {
+    -fx-background-color: green;
+}
+
+
+.query-btn {
+    -fx-background-color: #00bcff;
+    -fx-text-fill: #ffffff;
+    -fx-pref-width: 80;
+    -fx-pref-height: 30;
+}
+
+.add-btn {
+    -fx-background-color: #E38EFF ;
+    -fx-text-fill: #ffffff;
+    -fx-pref-width: 80;
+    -fx-pref-height: 30;
+}
+
+.insert-box {
+    -fx-alignment: center;
+    -fx-padding: 20 0 0 0;
+    -fx-spacing: 50;
+}
+
+
+#student-query-box {
+    -fx-alignment: center;
+}

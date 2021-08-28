@@ -1,0 +1,191 @@
+#mainBox {
+    /*-fx-background-color: #fffff0;*/
+    -fx-background-color: rgba(255, 255, 255, 0.5);
+
+}
+
+#welcome-box .label {
+    -fx-font-family: "宋体";
+
+}
+
+#welcome-box #welcome-label {
+    -fx-font-weight: bolder;
+    -fx-font-size: 25px;
+}
+
+#welcome-box #clock {
+    -fx-font-size: 15px;
+}
+
+.main-vbox {
+    /*-fx-background-color: #AAAAAA ;*/
+}
+
+#content-box {
+    -fx-alignment: center;
+    -fx-spacing: 150;
+}
+
+
+.content-col {
+    -fx-spacing: 40;
+}
+
+
+.tab {
+    -fx-pref-height: 30px;
+    -fx-pref-width: 17.05em;
+}
+
+.admin-tab{
+    -fx-pref-height: 30px;
+    -fx-pref-width: 14em;
+}
+
+
+.tab-label {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 15px;
+}
+
+.tab:selected .tab-label {
+    -fx-text-fill: #000000;
+}
+
+.jfx-tab-pane .tab-selected-line {
+    -fx-border-color: black;
+    -fx-stroke-width: 3px;
+}
+
+/*学生个人信息查询标题*/
+.info-title {
+    -fx-font-family: "";
+    -fx-font-weight: bolder;
+    -fx-font-size: 25px;
+}
+
+
+
+/*信息查看label标题*/
+.title {
+    -fx-font-family: "黑体";
+    -fx-font-weight: bolder;
+    -fx-font-size: 20px;
+
+}
+
+/*信息查看label信息内容*/
+.content {
+    -fx-font-family: "黑体";
+    -fx-font-size: 20px;
+}
+
+#btnEdit {
+    -fx-background-color: #00bcff;
+    -fx-text-fill: #ffffff;
+    -fx-pref-height: 10px;
+    -fx-pref-width: 150px;
+}
+
+.course-label {
+    -fx-font-family: "黑体";
+    -fx-font-size: 16px;
+}
+
+/*课程查询box*/
+.query-box {
+    -fx-spacing: 60;
+    -fx-pref-height: 60px;
+    -fx-alignment: center;
+    -fx-padding: 15;
+}
+
+.select {
+    -fx-prompt-text-fill: green;
+    -fx-background-color: #FFFFFF;
+    -fx-pref-height: 80px;
+    -jfx-focus-color: red;
+}
+
+.admin-select{
+    -fx-prompt-text-fill: green;
+    -fx-background-color: #FFFFFF;
+    -fx-pref-height: 50px;
+    -fx-pref-width: 100px;
+    -jfx-focus-color: red;
+}
+
+.select .input-line {
+    -fx-background-color: green;
+}
+
+
+.query-btn {
+    -fx-background-color: #00bcff;
+    -fx-text-fill: #ffffff;
+}
+
+
+/*.jfx-text-field .input-line{*/
+/*    -fx-background-color: green;*/
+/*}*/
+#course-query-box {
+    -fx-alignment: center;
+    /*-fx-pref-width: 800px;*/
+}
+
+/*#course-select-box {*/
+/*    -fx-alignment: center;*/
+/*    !*-fx-pref-width: 800px;*!*/
+/*}*/
+
+/*去除表格点按时边框*/
+/*.table-view {*/
+/*    -fx-background-insets: 0;*/
+/*    -fx-background-color: transparent, white, transparent, white;*/
+/*}*/
+
+/*.table-view .content {*/
+/*    -fx-background-color: transparent, white, transparent, white;*/
+/*}*/
+
+/*.table-view:focused {*/
+/*    -fx-background-color: transparent, white, transparent, white;*/
+/*}*/
+
+/*.table-column {*/
+/*    -fx-alignment: center;*/
+/*    !*-fx-pref-height: 40;*!*/
+/*}*/
+
+/*.table-row-cell .table-cell{*/
+/*    -fx-pref-height: 40px;*/
+/*    -fx-pref-tile-width: 40px;*/
+/*}*/
+
+/*.courseId{*/
+/*    -fx-pref-width: 80px;*/
+/*}*/
+/*.courseName{*/
+/*    */
+/*}*/
+/*.period{*/
+/*    */
+/*}*/
+/*.credit{*/
+/*    */
+/*}*/
+/*.semester{*/
+/*    */
+/*}*/
+/*.courseCollege{*/
+/*    */
+/*}*/
+/*.courseTeacher{*/
+/*    */
+/*}*/
+/*#courseSelectAction{*/
+/*    */
+/*}*/
+

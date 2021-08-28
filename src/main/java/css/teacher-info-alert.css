@@ -1,0 +1,71 @@
+
+
+.label {
+    -fx-font-family: "宋体";
+    -fx-font-weight: bolder;
+}
+
+#title-label {
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+    -fx-font-size: 20px;
+
+}
+
+#main-vbox{
+    -fx-padding: 10;
+}
+
+#main-update-box {
+    -fx-alignment: center;
+    -fx-spacing: 10;
+    -fx-pref-height: 500;
+}
+
+
+.info-vbox {
+    -fx-padding: 45;
+    -fx-spacing: 30;
+    -fx-pref-height: 700;
+}
+
+.info-label {
+    -fx-font-size: 15px;
+    -fx-padding: 1;
+    -fx-pref-width: 150px;
+    -fx-pref-height: 50;
+}
+
+#radio-button {
+    -fx-spacing: 50;
+}
+
+.jfx-text-field {
+    -fx-pref-width: 200;
+    -fx-background-color: #FFFFFF;
+}
+
+.jfx-combo-box {
+    -fx-pref-width: 200;
+    -fx-background-color: #FFFFFF;
+}
+
+
+.jfx-button {
+    -fx-background-color: #00bcff;
+    -fx-text-fill: #ffffff;
+    -fx-pref-width: 80px;
+    -fx-pref-height: 30px;
+}
+
+#male {
+    -jfx-selected-color: #5264AE;
+    -jfx-unselected-color: #212121;
+    -fx-text-fill: #5264AE;
+}
+
+#female {
+    -jfx-selected-color: #f44336;
+    -jfx-unselected-color: #b71c1c;
+    -fx-text-fill: #f44336;
+}
