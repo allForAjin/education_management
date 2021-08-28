@@ -1,0 +1,2 @@
+# education_management
+基于Javafx桌面GUI+SQLServer数据库的教学管理系统
